@@ -60,13 +60,17 @@ persona2 = {
 
 //enum
 enum Ruolo {
-    ADMIN, 
-    USER, 
-    GUEST
+    ADMIN = "admin", 
+    USER = "user", 
+    GUEST = "guest"
 }
+
+// è un tipo di dato che consente di definire un set di costanti 
+// denominate con nomi significativi e associati a valori
+// numerici o stringhe.
 
 const umano = {
     nome: "Marco",
     cognome: "Rossi",
-    ruolo: "admin"
+    ruolo: Ruolo.ADMIN
 }
