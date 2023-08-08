@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var _a;
 var Persona = /** @class */ (function () {
     //   public nome: string;
     //   private cognome: string;
@@ -26,17 +27,17 @@ var Persona = /** @class */ (function () {
         // this.nome = nome;
         // this.cognome = nome;
     }
-    Persona.prototype.presenta = function () {
-        console.log("ciao sono ".concat(this.nome, " ").concat(this.cognome));
-    };
+    // console.log(`ciao sono ${this.nome} ${this.cognome}`);
+    //siccome è abstract tutte le classi estese persona devono necessariamente
+    //utilizzare questo metodo
     Persona.prototype.saluta = function (persona) {
         console.log("ciao ".concat(this.nome, " ").concat(this.cognome, ", molto piacere"));
     };
     return Persona;
 }());
-var persona = new Persona("luca", "rossi");
-var persona2 = new Persona("paolo", "campana");
-var persona3 = new Persona("cristian", "verdi");
+// let persona: Persona = new Persona("luca", "rossi");
+// let persona2: Persona = new Persona("paolo", "campana");
+// let persona3: Persona = new Persona("cristian", "verdi");
 // persona.presenta();
 // persona2.saluta(persona);
 var Studente = /** @class */ (function (_super) {
@@ -47,7 +48,34 @@ var Studente = /** @class */ (function (_super) {
         _this.materiaPreferita = materiaPreferita;
         return _this;
     }
+    //   cambia(){
+    //     this.nome = "sododo"
+    //se il nome è private non si può cambiare ma se lo cambiassi in protected
+    //sarebbe possibile cambiare il nome
+    //   }
+    Studente.prototype.presenta = function () {
+        console.log("sono lo studente ".concat(this.nome));
+    };
     return Studente;
 }(Persona));
 var studente = new Studente("luca", "rossi", "storia");
-//le proprietà e metodici "static" possono essere chiamati senza creare un oggetto
+//le proprietà e metodi "static" possono essere chiamati senza creare un oggetto
+//singleton è un pattern di programazzione che ci impone di utilizzare un unica istanza
+//di una classe
+var Preside = /** @class */ (function () {
+    function Preside(nome, cognome) {
+        this.nome = nome;
+        this.cognome = cognome;
+    }
+    Preside.getInstance = function () {
+        if (Preside.instance) {
+            return this.instance;
+        }
+        this.instance = new Preside("Marco", "Verdi");
+    };
+    Preside.prototype.presenta = function () {
+        console.log("buongiorno sono il preside ".concat(this.nome, " ").concat(this.cognome));
+    };
+    return Preside;
+}());
+(_a = Preside.getInstance()) === null || _a === void 0 ? void 0 : _a.presenta();
