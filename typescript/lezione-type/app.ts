@@ -1,5 +1,5 @@
 //oggetto
-let persona: {
+let personaobj: {
   nome: string;
   cognome: string;
   eta: number;
@@ -11,7 +11,7 @@ let persona: {
 };
 //se non inserisco :object o {}, typescript riconosce automaticamente i tipi dei valori nell'oggetto
 
-persona = {
+personaobj = {
   nome: "luca",
   cognome: "rossi",
   eta: 45,
@@ -38,7 +38,7 @@ const tuple: [number, number] = [1, 2];
 //accetta solo il numero di elementi dichiarati all'interno delle quadre
 
 //any
-let prova: any = "bla";
+let provauno: any = "bla";
 //ad esempio per un array che accetta qualsiasi cosa
 
 //union
@@ -46,14 +46,14 @@ let prova: any = "bla";
 let prova2: string | number | any[] = ["", 34];
 
 //custom type
-type Persona = {
+type Umano = {
   nome: string;
   cognome: string;
 };
 
-let persona2 : Persona
+let personadue : Umano
 
-persona2 = {
+personadue = {
     nome: "paolo",
     cognome:"rossi"
 }
