@@ -41,9 +41,13 @@ var persona3 = new Persona("cristian", "verdi");
 // persona2.saluta(persona);
 var Studente = /** @class */ (function (_super) {
     __extends(Studente, _super);
-    function Studente() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    // materiaPreferita: string = "storia"
+    function Studente(nome, cognome, materiaPreferita) {
+        var _this = _super.call(this, nome, cognome) || this;
+        _this.materiaPreferita = materiaPreferita;
+        return _this;
     }
     return Studente;
 }(Persona));
-var studente = new Studente("luca", "rossi");
+var studente = new Studente("luca", "rossi", "storia");
+//le proprietà e metodici "static" possono essere chiamati senza creare un oggetto

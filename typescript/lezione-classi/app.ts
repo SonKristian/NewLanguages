@@ -27,6 +27,24 @@ let persona3: Persona = new Persona("cristian", "verdi");
 // persona.presenta();
 // persona2.saluta(persona);
 
-class Studente extends Persona {}
+class Studente extends Persona {
+  // materiaPreferita: string = "storia"
 
-const studente: Studente = new Studente("luca", "rossi");
+  constructor(
+    nome: string,
+    cognome: string,
+    private materiaPreferita: string
+  ) {
+    super(nome, cognome);
+  }
+//   cambia(){
+//     this.nome = "sododo"
+//se il nome è private non si può cambiare ma se lo cambiassi in protected
+//sarebbe possibile cambiare il nome 
+//   }
+}
+
+const studente: Studente = new Studente("luca", "rossi", "storia");
+
+//le proprietà e metodici "static" possono essere chiamati senza creare un oggetto
+
