@@ -53,7 +53,7 @@ const studente: Studente = new Studente("luca", "rossi", "storia");
 
 //le proprietà e metodi "static" possono essere chiamati senza creare un oggetto
 
-//singleton è un pattern di programazzione che ci impone di utilizzare un unica istanza
+//singleton è un pattern di programmazione che ci impone di utilizzare un unica istanza
 //di una classe
 
 class Preside {

@@ -60,7 +60,7 @@ var Studente = /** @class */ (function (_super) {
 }(Persona));
 var studente = new Studente("luca", "rossi", "storia");
 //le proprietà e metodi "static" possono essere chiamati senza creare un oggetto
-//singleton è un pattern di programazzione che ci impone di utilizzare un unica istanza
+//singleton è un pattern di programmazione che ci impone di utilizzare un unica istanza
 //di una classe
 var Preside = /** @class */ (function () {
     function Preside(nome, cognome) {
