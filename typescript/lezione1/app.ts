@@ -7,8 +7,8 @@
 //   }
 //   console.log(somma(3, 5));
 
-function somma(a:number, b:number){
-    return a+b
-}
+// function somma(a:number, b:number){
+//     return a+b
+// }
 // console.log(somma(3,"5"))
 console.log(somma(3,5))
